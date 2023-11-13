@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CursoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('cursos', [CursoController::class, 'index']);
+Route::get('cursos/create', [CursoController::class, 'create']);
+Route::get('cursos/{curso}', [CursoController::class, 'show']);
 
-Route::get('cursos', function () {
+/* Route::get('/', function () {
+    return view('welcome');
+}); */
+
+/* Route::get('cursos', function () {
     return "Ongi etorri a mis cursos";
 });
 
@@ -29,7 +33,7 @@ Route::get('cursos/create', function () {
 Route::get('cursos/{curso}', function ($curso) {
     return "Hau da nire ikastaroa " . $curso. "--------";
 });
-
+ */
 Route::get('cursos/{curso}/{categoria}', function ($curso, $categoria) {
     return "Hau da nire ikastaroa " . $curso. "-------- eta kategoria " . $categoria;
 });
