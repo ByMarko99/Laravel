@@ -58,4 +58,16 @@ class AlumnoController extends Controller
         $alumno->save();
         return redirect()->route('alumnos.show', $alumno);
     }
+
+    public function destroy(Alumno $alumno)
+    {
+        $alumno->delete();
+        return redirect()->route('alumnos.index');
+    }
+
+    public function delete(Alumno $alumno)
+    {
+      return view('alumnos.delete', compact('alumno'));
+
+    }
 }
