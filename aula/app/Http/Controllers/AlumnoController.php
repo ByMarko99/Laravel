@@ -58,6 +58,12 @@ class AlumnoController extends Controller
 
     public function update(Request $request, Alumno $alumno)
     {
+        $request->validate([
+            'nombre' => 'required|min:5|max:75',
+            'edad' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required'
+        ]);
         //return $request . "<br>".$alumno;
         $alumno->nombre_apellido = $request->nombre;
         $alumno->edad = $request->edad;
