@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAlumno;
 use Illuminate\Http\Request;
 use App\Models\Alumno;
 
@@ -30,14 +31,14 @@ class AlumnoController extends Controller
         return view('alumnos.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreAlumno $request)
     {
-        $request->validate([
+      /*   $request->validate([
             'nombre' => 'required|min:5|max:75',
             'edad' => 'required',
             'telefono' => 'required',
             'direccion' => 'required'
-        ]);
+        ]); */
         //return $request;
         $alumno = new Alumno();
         $alumno->nombre_apellido = $request->nombre;
@@ -56,14 +57,14 @@ class AlumnoController extends Controller
         return view('alumnos.edit', compact('alumno'));
     }
 
-    public function update(Request $request, Alumno $alumno)
+    public function update(StoreAlumno $request, Alumno $alumno)
     {
-        $request->validate([
+       /*  $request->validate([
             'nombre' => 'required|min:5|max:75',
             'edad' => 'required',
             'telefono' => 'required',
             'direccion' => 'required'
-        ]);
+        ]); */
         //return $request . "<br>".$alumno;
         $alumno->nombre_apellido = $request->nombre;
         $alumno->edad = $request->edad;
