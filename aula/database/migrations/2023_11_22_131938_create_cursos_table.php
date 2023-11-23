@@ -19,9 +19,9 @@ return new class extends Migration
 
             $table->string('horasAcademicas', 35)->nullable();
 
-            $table->unsignedBigInteger('profesor_id');
+            $table->unsignedBigInteger('profesor_id')->nullable();
 
-            $table->foreign('profesor_id')->references('id')->on('profesors');
+            $table->foreign('profesor_id')->references('id')->on('profesors')->onDelete('set null');
             $table->timestamps();
         });
     }

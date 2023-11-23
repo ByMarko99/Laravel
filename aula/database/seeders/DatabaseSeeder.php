@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Alumno;
+use App\Models\Curso;
+use App\Models\Profesor;
 use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +22,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Alumno::factory(50)->create();
+         Alumno::factory(50)->create();
+        Profesor::factory(10)->create();
+        Curso::factory(10)->create();
+
     }
 }

@@ -10,9 +10,10 @@
 
 </head>
 <body>
-    @include('layouts.menu')
+    @include('partials.menu')
     <main role="main" class="container">
         @yield('content')
     </main>
+    @include('partials.footer')
 </body>
 </html>
