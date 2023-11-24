@@ -9,19 +9,19 @@
         @csrf
         @method('put')
         <label for="nombre">Nombre y Apellido</label>
-        <input type="text" name="nombre" value="{{ $curso->nombre }}"><br>
-        {{--   @error('nombre')
+        <input type="text" name="nombre" value="{{old('nombre', $curso->nombre) }}"><br>
+         @error('nombre')
         <p class="akatsa"><strong>{{$message}}</strong></p>
-     @enderror --}}
+     @enderror
         <label for="nivel">Nivel</label>
         <select name="nivel" id="nivel">
-            <option value="Básico" @if ($curso->nivel == 'Básico') selected @endif>Básico</option>
-            <option value="Cambridge" @if ($curso->nivel == 'Cambridge') selected @endif>Cambridge</option>
-            <option value="Lituano Avanzado" @if ($curso->nivel == 'Lituano Avanzado') selected @endif>Lituano Avanzado</option>
+            <option value="Básico" @if (old($curso->nivel) == 'Básico') selected @endif>Básico</option>
+            <option value="Cambridge" @if (old($curso->nivel) == 'Cambridge') selected @endif>Cambridge</option>
+            <option value="Lituano Avanzado" @if (old($curso->nivel) == 'Lituano Avanzado') selected @endif>Lituano Avanzado</option>
         </select><br>
-        {{-- @error('edad')
+        @error('nivel')
         <p class="akatsa"><strong>{{$message}}</strong></p>
-     @enderror --}}
+     @enderror
         <label for="horasAcademicas">Horas Academicas</label>
         <input type="text" name="horasAcademicas" value="{{ $curso->horasAcademicas }}"><br>
         {{--  @error('telefono')
