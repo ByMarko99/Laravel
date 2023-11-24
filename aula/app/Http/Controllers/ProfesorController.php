@@ -22,7 +22,9 @@ class ProfesorController extends Controller
      */
     public function create()
     {
-        //
+        $profesiones = Profesor::select('profesion')->distinct()->get();
+
+        return view('profesores.create', compact('profesiones'));
     }
 
     /**
@@ -30,7 +32,15 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $profesor = new Profesor();
+        $profesor->nombreApellido = $request->nombreApellido;
+        $profesor->profesion = $request->profesion;
+        $profesor->gradoAcademico = $request->gradoAcademico;
+        $profesor->telefono = $request->telefono;
+
+        $profesor->save();
+        return redirect()->route('profesores.index');
     }
 
     /**

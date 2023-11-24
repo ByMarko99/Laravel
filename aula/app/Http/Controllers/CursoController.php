@@ -34,7 +34,9 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        $curso = new Curso();
+
+    /*             dd($request);
+ */        $curso = new Curso();
         $curso->nombre = $request->nombre;
         $curso->nivel = $request->nivel;
         $curso->horasAcademicas = $request->horasAcademicas;
@@ -54,17 +56,25 @@ class CursoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Curso $curso)
     {
-        //
+        $profesores = Profesor::all(); // Assuming you have a Profesor model
+
+        return view('cursos.edit', compact('curso', 'profesores'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Curso $curso)
     {
-        //
+        $curso->nombre = $request->nombre;
+        $curso->nivel = $request->nivel;
+        $curso->horasAcademicas = $request->horasAcademicas;
+        $curso->profesor_id = $request->profesor_id;
+        $curso->save();
+        return redirect()->route('cursos.index');
     }
 
     /**

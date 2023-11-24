@@ -28,7 +28,7 @@
       <li><a href="{{route ('profesores.index')}}">Irakasleak</a>
         <ul id="submenu">
           <li><a href="{{route ('profesores.index')}}">Irakasleen zerrenda</a></li>
-          <li><a href="#">Irakaslea sortu</a></li>
+          <li><a href="{{route ('profesores.create')}}">Irakaslea sortu</a></li>
         </ul>
       </li>
     </ul>
