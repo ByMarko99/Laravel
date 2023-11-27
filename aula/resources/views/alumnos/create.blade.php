@@ -5,7 +5,7 @@
 
 @section('content')
     <h1>NUEVO ALUMNO</h1>
-    <form action="{{ route('alumnos.store')}}" method="POST">
+    <form action="{{ route('alumnos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="nombre">Nombre y Apellido</label>
         <input type="text" name="nombre" value="{{old('nombre')}}" placeholder="Nombre y Apellido"><br>
@@ -19,14 +19,19 @@
            @enderror
         <label for="telefono">Telefono</label>
         <input type="text" name="telefono" value="{{old('telefono')}}" placeholder="Telefono" ><br>
-        @error('nombre')
+        @error('telefono')
         <p class="akatsa"><strong>{{$message}}</strong></p>
      @enderror
         <label for="direccion">Direccion</label>
         <input type="text" name="direccion" value="{{old('direccion')}}" placeholder="Direccion" ><br>
-        @error('nombre')
+        @error('direccion')
         <p class="akatsa"><strong>{{$message}}</strong></p>
      @enderror
+     <label for="foto">Argazkia</label>
+     <input type="file" name="foto" id="foto" value="{{old('foto')}}" accept="image/*">
+     @error('foto')
+     <p class="akatsa"><strong>{{$message}}</strong></p>
+  @enderror
         <input type="submit" value="Bidali">
     </form>
 @endsection

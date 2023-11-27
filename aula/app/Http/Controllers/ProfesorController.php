@@ -73,8 +73,8 @@ class ProfesorController extends Controller
     public function destroy(Profesor $profesor)
     {
 
-        $cursoDelProfesor = $profesor->curso;
-        if ($cursoDelProfesor -> isNotEmpty()) {
+        $cursoDelProfesor = $profesor->cursos;
+        if ($cursoDelProfesor->isNotEmpty()) {
             return redirect()->route('profesores.index')->with('error', 'No se puede eliminar el profesor porque tiene cursos asignados');
         }else{
             $profesor->delete();

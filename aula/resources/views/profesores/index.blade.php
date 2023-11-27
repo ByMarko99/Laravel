@@ -5,6 +5,18 @@
 
 @section('content')
 
+    <h1>PROFESORES ZERRENDA</h1>
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <table>
 
         <tr>
@@ -27,15 +39,15 @@
                 <form action="{{ route('profesores.destroy', $profesor) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                <td><button type="submit">Ezabatu</button></td>
+                    <td><button type="submit">Ezabatu</button></td>
                 </form>
             </tr>
         @endforeach
 
     </table>
 
-{{--     {{$cursos->links()}}
- --}}   {{--  <h1>IKASLE ZERRENDA</h1>
+    {{--     {{$cursos->links()}}
+ --}} {{--  <h1>IKASLE ZERRENDA</h1>
     <ol>
         @foreach ($alumnos as $alumno)
             <li> <a href="{{ route('alumnos.show', $alumno) }}"> {{ $alumno->nombre_apellido }} - {{ $alumno->edad }} </a>

@@ -25,7 +25,8 @@ class StoreAlumno extends FormRequest
                 'nombre' => 'required|min:5|max:75',
                 'edad' => 'required',
                 'telefono' => 'required',
-                'direccion' => 'required'
+                'direccion' => 'required',
+                'foto' => 'image'
 
         ];
     }
