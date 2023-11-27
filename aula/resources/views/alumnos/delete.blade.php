@@ -8,15 +8,16 @@
 
 
 
-       {{--  <a  style="color: rgb(255, 255, 255); text-decoration: none; background-color: #0c24dc; padding: 10px 20px; border-radius: 5px; cursor: pointer;" href="{{route ('alumnos.index')}}">EZ</a>
+    {{--  <a  style="color: rgb(255, 255, 255); text-decoration: none; background-color: #0c24dc; padding: 10px 20px; border-radius: 5px; cursor: pointer;" href="{{route ('alumnos.index')}}">EZ</a>
         <br>        <br>
         <br>
  --}}
     <form action="{{ route('alumnos.destroy', $alumno) }}" method="POST">
         @csrf
         @method('DELETE')
-        <a  style="color: rgb(255, 255, 255); text-decoration: none; background-color: #0c24dc; padding: 10px 20px; border-radius: 5px; cursor: pointer;" href="{{route ('alumnos.index')}}">EZ</a>
-               <br>
+        <a style="color: rgb(255, 255, 255); text-decoration: none; background-color: #0c24dc; padding: 10px 20px; border-radius: 5px; cursor: pointer;"
+            href="{{ route('alumnos.index') }}">EZ</a>
+        <br>
         <br>
 
         <button
