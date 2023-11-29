@@ -33,13 +33,15 @@ class ProfesorController extends Controller
     public function store(Request $request)
     {
 
-        $profesor = new Profesor();
+       /*  $profesor = new Profesor();
         $profesor->nombreApellido = $request->nombreApellido;
         $profesor->profesion = $request->profesion;
         $profesor->gradoAcademico = $request->gradoAcademico;
         $profesor->telefono = $request->telefono;
 
-        $profesor->save();
+        $profesor->save(); */
+
+        $profesor = Profesor::create($request->all());
         return redirect()->route('profesores.index');
     }
 
