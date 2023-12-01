@@ -22,7 +22,7 @@
             <tr>
                 <td>
                     @if($alumno->foto)
-                    <img src="{{ url('alumnos/'.$alumno->foto) }}" alt="" style="width: 50px; height: 50px;>
+                    <img src="{{ url($alumno->foto) }}" alt="" style="width: 50px; height: 50px;">
                     @else
                     <img src="{{ url('storage/alumnos/default.jpg') }}" alt="" style="width: 50px; height: 50px;">
                   @endif

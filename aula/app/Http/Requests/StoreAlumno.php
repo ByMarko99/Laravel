@@ -22,7 +22,7 @@ class StoreAlumno extends FormRequest
     public function rules(): array
     {
         return [
-                'nombre' => 'required|min:5|max:75',
+                'nombre_apellido' => 'required|min:5|max:75',
                 'edad' => 'required',
                 'telefono' => 'required',
                 'direccion' => 'required',
@@ -33,9 +33,9 @@ class StoreAlumno extends FormRequest
     public function messages() : array
     {
         return [
-            'nombre.required' => 'El nombre es requerido EUSKARA',
-            'nombre.min' => 'El nombre debe tener al menos 5 caracteres EUSKARA',
-            'nombre.max' => 'El nombre debe tener como máximo 75 caracteres EUSKARA',
+            'nombre_apellido.required' => 'El nombre es requerido EUSKARA',
+            'nombre_apellido.min' => 'El nombre debe tener al menos 5 caracteres EUSKARA',
+            'nombre_apellido.max' => 'El nombre debe tener como máximo 75 caracteres EUSKARA',
             'edad.required' => 'La edad es requerida EUSKARA',
             'telefono.required' => 'El teléfono es requerido EUSKARA',
             'direccion.required' => 'La dirección es requerida EUSKARA  '
