@@ -7,9 +7,9 @@
     <h1>NUEVO ALUMNO</h1>
     <form action="{{ route('alumnos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <label for="nombre">Nombre y Apellido</label>
-        <input type="text" name="nombre" value="{{old('nombre')}}" placeholder="Nombre y Apellido"><br>
-        @error('nombre')
+        <label for="nombre_apellido">Nombre y Apellido</label>
+        <input type="text" name="nombre_apellido" value="{{old('nombre_apellido')}}" placeholder="Nombre y Apellido"><br>
+        @error('nombre_apellido')
            <p class="akatsa"><strong>{{$message}}</strong></p>
         @enderror
         <label for="edad">Edad</label>

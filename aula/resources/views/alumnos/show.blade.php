@@ -8,7 +8,7 @@
             <h2 style="margin-bottom: 20px;">IKASLE: {{ $alumno->nombre_apellido }}</h2>
 
             @if($alumno->foto)
-            <img src="{{ url('alumnos/'.$alumno->foto) }}" alt="" style="width: 200px; height: 200px; margin-top: 20px;">
+            <img src="{{ url($alumno->foto)  }}" alt="" style="width: 200px; height: 200px; margin-top: 20px;">
             @else
             <img src="{{ url('storage/alumnos/default.jpg') }}" alt="" style="width: 200px; height: 200px; margin-top: 20px;">
 @endif

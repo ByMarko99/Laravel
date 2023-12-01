@@ -8,9 +8,9 @@
     <form action="{{ route('alumnos.update', $alumno)}}" method="POST">
         @csrf
         @method('put')
-        <label for="nombre">Nombre y Apellido</label>
-        <input type="text" name="nombre" value="{{old('nombre', $alumno->nombre_apellido)}}"><br>
-        @error('nombre')
+        <label for="nombre_apellido">Nombre y Apellido</label>
+        <input type="text" name="nombre_apellido" value="{{old('nombre_apellido', $alumno->nombre_apellido)}}"><br>
+        @error('nombre_apellido')
         <p class="akatsa"><strong>{{$message}}</strong></p>
      @enderror
         <label for="edad">Edad</label>
