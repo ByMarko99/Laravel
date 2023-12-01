@@ -90,4 +90,8 @@ class CursoController extends Controller
     {
         //
     }
+    public function cursos_alumnos(Curso $curso)
+    {
+        return view('cursos.cursos_alumnos', compact('curso'));
+    }
 }
