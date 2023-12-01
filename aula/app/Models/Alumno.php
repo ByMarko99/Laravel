@@ -18,4 +18,11 @@ class Alumno extends Model
  */
 protected $guarded = ['foto'];
     protected $hidden = ['id'];
+
+    public function cursos(){
+
+        return $this->belongsToMany(Curso::class);
+
+        }
 }
+
