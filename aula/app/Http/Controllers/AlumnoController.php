@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAlumno;
 use Illuminate\Http\Request;
 use App\Models\Alumno;
+use App\Models\Curso;
 use Illuminate\Support\Facades\Storage;
 
 class AlumnoController extends Controller
@@ -108,5 +109,11 @@ class AlumnoController extends Controller
     public function alumnos_cursos(Alumno $alumno)
     {
         return view('alumnos.alumnos_cursos', compact('alumno'));
+    }
+
+    public function matrikulatu(Alumno $alumno)
+    {
+        $cursos = Curso::all();
+        return view('alumnos.matrikulatu', compact('alumno', 'cursos'));
     }
 }

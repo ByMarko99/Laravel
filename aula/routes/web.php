@@ -69,6 +69,8 @@ Route::post('profesores/store', [ProfesorController::class, 'store']) -> name('p
 Route::resource('alumnos', AlumnoController::class);
 Route::resource('cursos', CursoController::class);
 Route::get('alumnos/alumnos_cursos/{alumno}', [AlumnoController::class, 'alumnos_cursos']) -> name('alumnos.alumnos_cursos');
+Route::get('alumnos/matrikulatu/{alumno}', [AlumnoController::class, 'matrikulatu']) -> name('alumnos.matrikulatu');
+
 Route::get('cursos/cursos_alumnos/{curso}', [CursoController::class, 'cursos_alumnos']) -> name('cursos.cursos_alumnos');
 
 Route::delete('profesores/{profesor}', [ProfesorController::class, 'destroy']) -> name('profesores.destroy');
