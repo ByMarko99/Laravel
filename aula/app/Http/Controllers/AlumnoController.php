@@ -119,8 +119,6 @@ class AlumnoController extends Controller
 
     public function matrikulatu_store(Request $request, Alumno $alumno)
     {
-
-
         $alumno->cursos()->sync($request->cursos);
         return redirect()->route('alumnos.index');
     }
