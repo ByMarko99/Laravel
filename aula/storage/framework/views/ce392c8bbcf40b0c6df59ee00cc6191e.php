@@ -1,7 +1,9 @@
 <?php $__env->startSection('title', 'IKASLEEN CURSOS'); ?>
 
 <?php $__env->startSection('content'); ?>
-
+<form action="<?php echo e(route('alumnos.matrikulatu_store', $alumno)); ?>" method="POST">
+    <?php echo csrf_field(); ?>
+    <?php echo method_field('PUT'); ?>
     <table>
 
         <tr>
@@ -12,23 +14,25 @@
         </tr>
         <?php $__currentLoopData = $cursos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $curso): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-                <?php if($alumno->cursos->contains($curso)): ?>
+
+
                     <td>
-                        <input type="checkbox" checked >
-                        <label  style="text-decoration: line-through;" for="curso-<?php echo e($curso->id); ?>"><?php echo e($curso->nombre); ?></label>
+                        <input type="checkbox" name="cursos[]" value="<?php echo e($curso->id); ?>" <?php if($alumno->cursos->contains($curso)): ?> checked <?php endif; ?>>
+                        <label><?php echo e($curso->nombre); ?></label>
                     </td>
-                <?php else: ?>
-                    <td>
-                        <input type="checkbox">
-                        <label for="curso-<?php echo e($curso->id); ?>"><?php echo e($curso->nombre); ?></label>
-                    </td>
-                <?php endif; ?>
+
+
                 
 
             </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     </table>
+    <button type="submit" class="button-style" style="background-color: black">Matrikulatu</button>
+
+</form>
+
+
 
     <br>
     <br>
