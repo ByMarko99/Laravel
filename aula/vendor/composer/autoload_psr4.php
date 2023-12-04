@@ -70,6 +70,7 @@ return array(
     'Laravel\\Sanctum\\' => array($vendorDir . '/laravel/sanctum/src'),
     'Laravel\\Sail\\' => array($vendorDir . '/laravel/sail/src'),
     'Laravel\\Prompts\\' => array($vendorDir . '/laravel/prompts/src'),
+    'Laravel\\Breeze\\' => array($vendorDir . '/laravel/breeze/src'),
     'LaravelLang\\Publisher\\' => array($vendorDir . '/laravel-lang/publisher/src'),
     'LaravelLang\\NativeLocaleNames\\' => array($vendorDir . '/laravel-lang/native-locale-names/src'),
     'LaravelLang\\Locales\\' => array($vendorDir . '/laravel-lang/locales/src'),
