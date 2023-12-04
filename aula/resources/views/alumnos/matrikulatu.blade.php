@@ -10,20 +10,31 @@
         <tr>
 
             <th>Cursos</th>
-            <th>Horas Academicas</th>
-            <th>&nbsp;</th>
 
 
         </tr>
-        @foreach ($alumno->cursos as $curso)
-
-        <tr>
+        @foreach ($cursos as $curso)
+            <tr>
+                @if ($alumno->cursos->contains($curso))
+                    <td>
+                        <input type="checkbox" checked >
+                        <label  style="text-decoration: line-through;" for="curso-{{ $curso->id }}">{{ $curso->nombre }}</label>
+                    </td>
+                @else
+                    <td>
+                        <input type="checkbox">
+                        <label for="curso-{{ $curso->id }}">{{ $curso->nombre }}</label>
+                    </td>
+                @endif
+                {{--  @if ($curso->nombre == $alumno->$curso->nombre)
+            <td style="text-decoration: line-through;">{{ $curso->nombre }}</td>
+            @else
             <td>{{ $curso->nombre }}</td>
-            <td>{{ $curso->horasAcademicas }}</td>
 
-            <td><a href="{{ route('cursos.cursos_alumnos', $curso) }}" class="button-style">Alumnos del Curso</a></td>
-        </tr>
-    @endforeach
+            @endif --}}
+
+            </tr>
+        @endforeach
 
     </table>
 
@@ -33,7 +44,7 @@
     <br>
     <br>
 
-   {{--  <h1>IKASLE ZERRENDA</h1>
+    {{--  <h1>IKASLE ZERRENDA</h1>
     <ol>
         @foreach ($alumnos as $alumno)
             <li> <a href="{{ route('alumnos.show', $alumno) }}"> {{ $alumno->nombre_apellido }} - {{ $alumno->edad }} </a>
