@@ -1,12 +1,11 @@
 <?php
-
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\ProfesorController;
 use App\Models\Curso;
 use App\Models\Profesor;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,31 +17,12 @@ use App\Models\Profesor;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+/*Route::get('/', function () {
+     return view('welcome');
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-
-
-
-});
-
-Route::middleware('auth')->group(function () {
-
+});*/
 
 Route::get('/', [AlumnoController::class, 'index']) -> name('alumnos.index');
 /*
@@ -62,30 +42,30 @@ Route::get('alumnos/{alumno}', [AlumnoController::class, 'show']) -> name('alumn
 /* Route::controller(AlumnoController::class)->group(function (){
 
 
-   Route::get('/',  'index') -> name('alumnos.index');
-   Route::get('alumnos','index') -> name('alumnos.index');
+    Route::get('/',  'index') -> name('alumnos.index');
+    Route::get('alumnos','index') -> name('alumnos.index');
 
-   Route::get('alumnos/create', 'create') -> name('alumnos.create');
-   Route::post('alumnos/store', 'store') -> name('alumnos.store');
+    Route::get('alumnos/create', 'create') -> name('alumnos.create');
+    Route::post('alumnos/store', 'store') -> name('alumnos.store');
 
-   Route::get('alumnos/edit/{alumno}', 'edit') -> name('alumnos.edit');
-   Route::put('alumnos/update/{alumno}','update') -> name('alumnos.update');
+    Route::get('alumnos/edit/{alumno}', 'edit') -> name('alumnos.edit');
+    Route::put('alumnos/update/{alumno}','update') -> name('alumnos.update');
 
-   Route::delete('alumnos/{alumno}', 'destroy') -> name('alumnos.destroy');
-   Route::get('alumnos/delete/{alumno}', 'delete') -> name('alumnos.delete');
+    Route::delete('alumnos/{alumno}', 'destroy') -> name('alumnos.destroy');
+    Route::get('alumnos/delete/{alumno}', 'delete') -> name('alumnos.delete');
 
-   Route::get('alumnos/{alumno}', 'show') -> name('alumnos.show');
+    Route::get('alumnos/{alumno}', 'show') -> name('alumnos.show');
 });
-*/
+ */
 Route::get('alumnos/delete/{alumno}', [AlumnoController::class, 'delete']) -> name('alumnos.delete');
 
 /* Route::get('cursos/create', [CursoController::class, 'create']) -> name('cursos.create');
 Route::post('cursos/store', [CursoController::class, 'store']) -> name('cursos.store');
-*/
+ */
 
-/* Route::get('profesores/create', [ProfesorController::class, 'create']) -> name('profesores.create');
+ /* Route::get('profesores/create', [ProfesorController::class, 'create']) -> name('profesores.create');
 Route::post('profesores/store', [ProfesorController::class, 'store']) -> name('profesores.store');
-*/
+ */
 Route::resource('alumnos', AlumnoController::class);
 Route::resource('cursos', CursoController::class);
 Route::get('alumnos/alumnos_cursos/{alumno}', [AlumnoController::class, 'alumnos_cursos']) -> name('alumnos.alumnos_cursos');
@@ -98,6 +78,5 @@ Route::delete('profesores/{profesor}', [ProfesorController::class, 'destroy']) -
 
 Route::resource('profesores', ProfesorController::class);
 
-});
 
-require __DIR__.'/auth.php';
+?>
