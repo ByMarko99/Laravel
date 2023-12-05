@@ -4,9 +4,7 @@
 @section('title', 'IKASLEEN CURSOS')
 
 @section('content')
-<form action="{{ route('alumnos.matrikulatu_store', $alumno) }}" method="POST">
-    @csrf
-    @method('PUT')
+
     <table>
 
         <tr>
@@ -17,14 +15,17 @@
         </tr>
         @foreach ($cursos as $curso)
             <tr>
-
-
+                @if ($alumno->cursos->contains($curso))
                     <td>
-                        <input type="checkbox" name="cursos[]" value="{{$curso->id}}" @if ($alumno->cursos->contains($curso)) checked @endif>
-                        <label>{{ $curso->nombre }}</label>
+                        <input type="checkbox" checked >
+                        <label  style="text-decoration: line-through;" for="curso-{{ $curso->id }}">{{ $curso->nombre }}</label>
                     </td>
-
-
+                @else
+                    <td>
+                        <input type="checkbox">
+                        <label for="curso-{{ $curso->id }}">{{ $curso->nombre }}</label>
+                    </td>
+                @endif
                 {{--  @if ($curso->nombre == $alumno->$curso->nombre)
             <td style="text-decoration: line-through;">{{ $curso->nombre }}</td>
             @else
@@ -36,11 +37,6 @@
         @endforeach
 
     </table>
-    <button type="submit" class="button-style" style="background-color: black">Matrikulatu</button>
-
-</form>
-
-
 
     <br>
     <br>

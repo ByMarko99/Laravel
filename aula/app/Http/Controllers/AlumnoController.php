@@ -116,12 +116,4 @@ class AlumnoController extends Controller
         $cursos = Curso::all();
         return view('alumnos.matrikulatu', compact('alumno', 'cursos'));
     }
-
-    public function matrikulatu_store(Request $request, Alumno $alumno)
-    {
-
-
-        $alumno->cursos()->sync($request->cursos);
-        return redirect()->route('alumnos.index');
-    }
 }
