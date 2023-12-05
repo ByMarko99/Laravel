@@ -8,7 +8,7 @@
     <form action="{{ route('cursos.store')}}" method="POST">
         @csrf
         <label for="nombre">Nombre y Apellido</label>
-        <input type="text" name="nombre" placeholder="Nombre y Apellido"><br>
+        <input type="text" name="nombre" value="nombre" placeholder="Nombre y Apellido"><br>
      {{--    @error('nombre')
            <p class="akatsa"><strong>{{$message}}</strong></p>
         @enderror --}}
@@ -22,7 +22,7 @@
            <p class="akatsa"><strong>{{$message}}</strong></p>
            @enderror --}}
         <label for="horasAcademicas">Horas Academicas</label>
-        <input type="text" name="horasAcademicas"  placeholder="Horas Academicas" ><br>
+        <input type="text" name="horasAcademicas" value="horasAcademicas" placeholder="Horas Academicas" ><br>
      {{--    @error('nombre')
         <p class="akatsa"><strong>{{$message}}</strong></p>
      @enderror --}}

@@ -1,4 +1,3 @@
-
 table {
     margin-top: 30px;
     margin-left: 20px;
@@ -124,49 +123,19 @@ input[type=text], select, textarea {
     resize: vertical;
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    background-color: #f8f9fa;
-}
-h1{
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px !important;
-}
-
-form input[type="text"],
-form select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-form input[type="submit"] {
+  input[type=submit] {
     background-color: #04AA6D;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-}
+  }
 
-form input[type="submit"]:hover {
+  input[type=submit]:hover {
     background-color: #45a049;
-}
+  }
+
 
 #submenu li {
     float: none;
