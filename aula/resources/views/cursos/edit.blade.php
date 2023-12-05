@@ -15,9 +15,9 @@
      @enderror
         <label for="nivel">Nivel</label>
         <select name="nivel" id="nivel">
-            <option value="Básico" @if (old('nivel', $curso->nivel) == 'Básico') selected @endif>Básico</option>
-            <option value="Cambridge" @if (old('nivel',$curso->nivel) == 'Cambridge') selected @endif>Cambridge</option>
-            <option value="Lituano Avanzado" @if (old('nivel', $curso->nivel) == 'Lituano Avanzado') selected @endif>Lituano Avanzado</option>
+            <option value="Básico" @if (old($curso->nivel) == 'Básico') selected @endif>Básico</option>
+            <option value="Cambridge" @if (old($curso->nivel) == 'Cambridge') selected @endif>Cambridge</option>
+            <option value="Lituano Avanzado" @if (old($curso->nivel) == 'Lituano Avanzado') selected @endif>Lituano Avanzado</option>
         </select><br>
         @error('nivel')
         <p class="akatsa"><strong>{{$message}}</strong></p>
