@@ -13,15 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-     return view('welcome');
+Route::get('/', function () {
+/*     return view('welcome');
+ */
 
 
-
-});*/
-
-Route::get('/', [AlumnoController::class, 'index']) -> name('alumnos.index');
+});
 /*
+Route::get('/', [AlumnoController::class, 'index']) -> name('alumnos.index');
 Route::get('alumnos', [AlumnoController::class, 'index']) -> name('alumnos.index');
 
 Route::get('alumnos/create', [AlumnoController::class, 'create']) -> name('alumnos.create');

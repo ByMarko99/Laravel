@@ -1,15 +1,6 @@
-table{
-    margin-top: 30px;
-    margin-left: 20px;
-    border-collapse: collapse;
-    width: 80%;
-}
 table,th,td{
-    border: 2px solid;
-    padding: 10px;
-}
-th,td{
-    padding: 10px;
+    border: 1px solid black;
+    padding: 3px;
 }
 
 #menu{
