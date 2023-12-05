@@ -24,11 +24,7 @@
                 <td>{{ $profesor->gradoAcademico }}</td>
                 <td>{{ $profesor->telefono }}</td>
                 <td><a {{-- href="{{ route('alumnos.edit', $alumno) }}" --}}>Editatu</a></td>
-                <form action="{{ route('profesores.destroy', $profesor) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                <td><button type="submit">Ezabatu</button></td>
-                </form>
+                <td><a {{-- href="{{ route('alumnos.delete', $alumno) }}" --}}>Ezabatu</a></td>
             </tr>
         @endforeach
 

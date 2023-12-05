@@ -68,8 +68,6 @@ Route::post('profesores/store', [ProfesorController::class, 'store']) -> name('p
  */
 Route::resource('alumnos', AlumnoController::class);
 Route::resource('cursos', CursoController::class);
-Route::delete('profesores/{profesor}', [ProfesorController::class, 'destroy']) -> name('profesores.destroy');
-
 Route::resource('profesores', ProfesorController::class);
 
 
