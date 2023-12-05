@@ -22,10 +22,4 @@ class Curso extends Model
         return $this->belongsTo(Profesor::class);
 
         }
-
-        public function alumnos(){
-
-            return $this->belongsToMany(Alumno::class);
-
-          }
 }

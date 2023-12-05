@@ -16,8 +16,6 @@
             <th>Direccion</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
-            <th>&nbsp;</th>
-
 
         </tr>
         @foreach ($alumnos as $alumno)
@@ -36,8 +34,6 @@
                 <td>{{ $alumno->direccion }}</td>
                 <td><a href="{{ route('alumnos.edit', $alumno) }}">Editatu</a></td>
                 <td><a href="{{ route('alumnos.delete', $alumno) }}">Ezabatu</a></td>
-                <td><a href="{{ route('alumnos.alumnos_cursos', $alumno) }}"  class="button-style">VIEW CURSOS</a></td>
-
             </tr>
         @endforeach
 

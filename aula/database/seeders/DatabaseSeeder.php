@@ -22,10 +22,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        /*  Alumno::factory(50)->create();
+         Alumno::factory(50)->create();
         Profesor::factory(10)->create();
-        Curso::factory(10)->create(); */
+        Curso::factory(10)->create();
 
-        $this->call(AlumnoCursoSeeder::class);
     }
 }

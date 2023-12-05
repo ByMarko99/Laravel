@@ -104,9 +104,4 @@ class AlumnoController extends Controller
       return view('alumnos.delete', compact('alumno'));
 
     }
-
-    public function alumnos_cursos(Alumno $alumno)
-    {
-        return view('alumnos.alumnos_cursos', compact('alumno'));
-    }
 }
