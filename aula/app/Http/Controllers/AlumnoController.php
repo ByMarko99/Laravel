@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAlumno;
 use Illuminate\Http\Request;
 use App\Models\Alumno;
-use Illuminate\Support\Facades\Storage;
 
 class AlumnoController extends Controller
 {
@@ -46,11 +45,6 @@ class AlumnoController extends Controller
         $alumno->edad = $request->edad;
         $alumno->telefono = $request->telefono;
         $alumno->direccion = $request->direccion;
-
-        if($request->file('foto')){
-            $url = Storage::putFile('public/alumnos', $request->file('foto'));
-            $alumno->foto = $url;
-        }
         $alumno->save();
         return redirect()->route('alumnos.index');
     }
