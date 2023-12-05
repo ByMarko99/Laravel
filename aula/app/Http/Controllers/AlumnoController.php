@@ -11,9 +11,7 @@ class AlumnoController extends Controller
     //
     public function index()
     {
-/*         $alumnos = Alumno::all();
- */        $alumnos = Alumno::orderBy('nombre_apellido','asc')->paginate(10);
-
+        $alumnos = Alumno::all();
         return view('alumnos.index', compact('alumnos')); // compact('curso') = ['curso' => $curso]
     }
 
@@ -32,12 +30,6 @@ class AlumnoController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required|min:5|max:75',
-            'edad' => 'required',
-            'telefono' => 'required',
-            'direccion' => 'required'
-        ]);
         //return $request;
         $alumno = new Alumno();
         $alumno->nombre_apellido = $request->nombre;

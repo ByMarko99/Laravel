@@ -9,13 +9,13 @@
         @csrf
         @method('put')
         <label for="nombre">Nombre y Apellido</label>
-        <input type="text" name="nombre" value="{{$alumno->nombre_apellido}}"><br>
+        <input type="text" name="nombre" value="{{$alumno->nombre_apellido}}" required><br>
         <label for="edad">Edad</label>
-        <input type="text" name="edad" value="{{$alumno->edad}}" ><br>
+        <input type="text" name="edad" value="{{$alumno->edad}}" required><br>
         <label for="telefono">Telefono</label>
-        <input type="text" name="telefono" value="{{$alumno->telefono}}" ><br>
+        <input type="text" name="telefono" value="{{$alumno->telefono}}" required><br>
         <label for="direccion">Direccion</label>
-        <input type="text" name="direccion" value="{{$alumno->direccion}}" ><br>
+        <input type="text" name="direccion" value="{{$alumno->direccion}}" required><br>
         <input type="submit" value="Bidali">
     </form>
 @endsection

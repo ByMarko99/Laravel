@@ -8,19 +8,13 @@
     <form action="{{ route('alumnos.store')}}" method="POST">
         @csrf
         <label for="nombre">Nombre y Apellido</label>
-        <input type="text" name="nombre" value="{{old('nombre')}}" placeholder="Nombre y Apellido"><br>
-        @error('nombre')
-           <p class="akatsa"><strong>{{$message}}</strong></p>
-        @enderror
+        <input type="text" name="nombre" value="" placeholder="Nombre y Apellido" required><br>
         <label for="edad">Edad</label>
-        <input type="text" name="edad" value="{{old('edad')}}" placeholder="Edad" ><br>
-        @error('edad')
-           <p class="akatsa"><strong>{{$message}}</strong></p>
-           @enderror
+        <input type="text" name="edad" value="" placeholder="Edad" required><br>
         <label for="telefono">Telefono</label>
-        <input type="text" name="telefono" value="{{old('telefono')}}" placeholder="Telefono" ><br>
+        <input type="text" name="telefono" value="" placeholder="Telefono" required><br>
         <label for="direccion">Direccion</label>
-        <input type="text" name="direccion" value="{{old('direccion')}}" placeholder="Direccion" ><br>
+        <input type="text" name="direccion" value="" placeholder="Direccion" required><br>
         <input type="submit" value="Bidali">
     </form>
 @endsection
