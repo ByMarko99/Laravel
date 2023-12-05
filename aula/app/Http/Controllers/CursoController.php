@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCurso;
 use App\Models\Curso;
 use Illuminate\Http\Request;
 use App\Models\Profesor;
@@ -33,7 +32,7 @@ class CursoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCurso $request)
+    public function store(Request $request)
     {
 
     /*             dd($request);
@@ -68,7 +67,7 @@ class CursoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreCurso $request, Curso $curso)
+    public function update(Request $request, Curso $curso)
     {
         $curso->nombre = $request->nombre;
         $curso->nivel = $request->nivel;
