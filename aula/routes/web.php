@@ -1,9 +1,5 @@
 <?php
 use App\Http\Controllers\AlumnoController;
-use App\Http\Controllers\CursoController;
-use App\Http\Controllers\ProfesorController;
-use App\Models\Curso;
-use App\Models\Profesor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,11 +55,6 @@ Route::get('alumnos/{alumno}', [AlumnoController::class, 'show']) -> name('alumn
  */
 Route::get('alumnos/delete/{alumno}', [AlumnoController::class, 'delete']) -> name('alumnos.delete');
 
-/* Route::get('cursos/create', [CursoController::class, 'create']) -> name('cursos.create');
- */
 Route::resource('alumnos', AlumnoController::class);
-Route::resource('cursos', CursoController::class);
-Route::resource('profesores', ProfesorController::class);
-
 
 ?>
