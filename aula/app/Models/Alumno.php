@@ -14,8 +14,7 @@ class Alumno extends Model
 
     protected $primaryKey = "id";
 
-/*     protected $fillable = ['nombre_apellido', 'edad', 'telefono', 'direccion', 'foto'];
- */
-protected $guarded = ['foto'];
+    protected $fillable = ['nombre_apellido', 'edad', 'telefono', 'direccion', 'foto'];
+
     protected $hidden = ['id'];
 }

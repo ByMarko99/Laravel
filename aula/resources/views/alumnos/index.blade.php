@@ -8,8 +8,6 @@
     <table>
 
         <tr>
-            <th>Argazkia</th>
-
             <th>Izen Abizena</th>
             <th>Adina</th>
             <th>Telefonoa</th>
@@ -20,13 +18,6 @@
         </tr>
         @foreach ($alumnos as $alumno)
             <tr>
-                <td>
-                    @if($alumno->foto)
-                    <img src="{{ url('alumnos/'.$alumno->foto) }}" alt="" style="width: 50px; height: 50px;>
-                    @else
-                    <img src="{{ url('storage/alumnos/default.jpg') }}" alt="" style="width: 50px; height: 50px;">
-                  @endif
-                </td>
                 <td><a href="{{ route('alumnos.show', $alumno) }}"> {{ $alumno->nombre_apellido }}</a>
                 </td>
                 <td>{{ $alumno->edad }}</td>
@@ -40,12 +31,6 @@
     </table>
 
     {{$alumnos->links()}}
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
    {{--  <h1>IKASLE ZERRENDA</h1>
     <ol>
         @foreach ($alumnos as $alumno)

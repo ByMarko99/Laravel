@@ -13,9 +13,8 @@ class Profesor extends Model
 
     protected $primaryKey = "id";
 
-/*     protected $fillable = ['nombreApellido', 'profesion', 'gradoAcademico', 'telefono'];
- */
-protected $guarded = [];
+    protected $fillable = ['nombreApellido', 'profesion', 'gradoAcademico', 'telefono'];
+
     protected $hidden = [ 'id'];
 
     public function cursos(){

@@ -41,20 +41,18 @@ class AlumnoController extends Controller
             'direccion' => 'required'
         ]); */
         //return $request;
-       /*  $alumno = new Alumno();
+        $alumno = new Alumno();
         $alumno->nombre_apellido = $request->nombre;
         $alumno->edad = $request->edad;
         $alumno->telefono = $request->telefono;
-
-        $alumno->direccion = $request->direccion; */
-        $alumno = Alumno::create($request->all());
+        $alumno->direccion = $request->direccion;
 
         if($request->file('foto')){
             $url = Storage::putFile('public/alumnos', $request->file('foto'));
             $alumno->foto = $url;
         }
-/*         $alumno->save();
- */        return redirect()->route('alumnos.index');
+        $alumno->save();
+        return redirect()->route('alumnos.index');
     }
 
     public function edit(Alumno $alumno)
@@ -74,20 +72,11 @@ class AlumnoController extends Controller
             'direccion' => 'required'
         ]); */
         //return $request . "<br>".$alumno;
-        /* $alumno->nombre_apellido = $request->nombre;
+        $alumno->nombre_apellido = $request->nombre;
         $alumno->edad = $request->edad;
         $alumno->telefono = $request->telefono;
         $alumno->direccion = $request->direccion;
-        $alumno->save(); */
-
-        $alumno->update($request->all());
-
-        /* if($request->file('foto')){
-            $url = Storage::putFile('public/alumnos', $request->file('foto'));
-            $alumno->foto = $url;
-        } */
-/*         $alumno->save();
- */
+        $alumno->save();
         return redirect()->route('alumnos.show', $alumno);
     }
 
