@@ -19,14 +19,8 @@
            @enderror
         <label for="telefono">Telefono</label>
         <input type="text" name="telefono" value="{{old('telefono')}}" placeholder="Telefono" ><br>
-        @error('nombre')
-        <p class="akatsa"><strong>{{$message}}</strong></p>
-     @enderror
         <label for="direccion">Direccion</label>
         <input type="text" name="direccion" value="{{old('direccion')}}" placeholder="Direccion" ><br>
-        @error('nombre')
-        <p class="akatsa"><strong>{{$message}}</strong></p>
-     @enderror
         <input type="submit" value="Bidali">
     </form>
 @endsection
