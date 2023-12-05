@@ -9,27 +9,13 @@
 
         <tr>
 
-            <th>Argazkia</th>
             <th>Alumnos en curso</th>
-            <th>Edad</th>
-
             <th>&nbsp;</th>
 
         </tr>
         @foreach ($curso->alumnos as $alumno)
             <tr>
-                <td>
-                    <div style="display: flex; justify-content: center;">
-                    @if($alumno->foto)
-                    <img src="{{ url($alumno->foto) }}" alt="" style="width: 100px; height: 50px;">
-                    @else
-                    <img src="{{ url('storage/alumnos/default.jpg') }}" alt="" style="width: 100px; height: 50px; text-align:center;">
-                  @endif
-                </div>
-
-                </td>
                 <td>{{ $alumno->nombre_apellido }}</td>
-                <td>{{ $alumno->edad }}</td>
                 <td>
                     <a href="{{ route('alumnos.index') }}" class="button-style">Index</a>
                 </td>

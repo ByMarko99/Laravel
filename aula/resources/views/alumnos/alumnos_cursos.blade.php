@@ -10,7 +10,6 @@
         <tr>
 
             <th>Cursos</th>
-            <th>Horas Academicas</th>
             <th>&nbsp;</th>
 
 
@@ -19,8 +18,6 @@
 
         <tr>
             <td>{{ $curso->nombre }}</td>
-            <td>{{ $curso->horasAcademicas }}</td>
-
             <td><a href="{{ route('cursos.cursos_alumnos', $curso) }}" class="button-style">Alumnos del Curso</a></td>
         </tr>
     @endforeach
