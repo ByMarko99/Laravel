@@ -51,12 +51,10 @@ class AlumnoController extends Controller
 
         if($request->file('foto')){
             $url = Storage::putFile('public/alumnos', $request->file('foto'));
-            $urldb = str_replace('public', 'storage', $url);
-            $alumno->foto = $urldb;
-            $alumno->save();
-
+            $alumno->foto = $url;
         }
-         return redirect()->route('alumnos.index');
+/*         $alumno->save();
+ */        return redirect()->route('alumnos.index');
     }
 
     public function edit(Alumno $alumno)
