@@ -1,7 +1,6 @@
 <?php $__env->startSection('title', 'IKASLE SORTU'); ?>
 
 <?php $__env->startSection('content'); ?>
-    <h1>NUEVO ALUMNO</h1>
     <form action="<?php echo e(route('alumnos.store')); ?>" method="POST" enctype="multipart/form-data">
         <?php echo csrf_field(); ?>
         <div class="flex items-center justify-center min-h-screen bg-gray-200">

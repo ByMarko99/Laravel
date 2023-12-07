@@ -4,7 +4,6 @@
 @section('title', 'IKASLE SORTU')
 
 @section('content')
-    <h1>NUEVO ALUMNO</h1>
     <form action="{{ route('alumnos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="flex items-center justify-center min-h-screen bg-gray-200">
